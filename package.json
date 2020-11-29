@@ -1,0 +1,28 @@
+{
+  "name": "ceknord",
+  "version": "1.0.0",
+  "description": "Mengecek akun nordvpn, apakah aktif atau tidak",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cr4r/ceknord.git"
+  },
+  "keywords": [
+    "nordvpn",
+    "nord",
+    "vpn",
+    "cek",
+    "checker",
+    "akun",
+    "account"
+  ],
+  "author": "cr4r",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/cr4r/ceknord/issues"
+  },
+  "homepage": "https://github.com/cr4r/ceknord#readme"
+}
