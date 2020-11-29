@@ -8,6 +8,10 @@ Recomended (ubuntu/debian)
 ```bash
 ./install
 ```
+## Run
+```bash
+node index.js
+```
 
 ## Hasil
 { status: 'ok', result: 'lipspence@gmail.com:Landbj40 May 21st, 2021' }
