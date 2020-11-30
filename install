@@ -25,4 +25,3 @@ msg -ama "Sedang mencari dan menginstall tool pendukung"
     [[ $(dpkg --get-selections | grep -w "nordvpn"|head -1) ]] || msg -ne "ERROR ERROR ERROR"
 }
 msg -bar2
-msg -ama "Cek versi node (node -v), jika versi node di bawah 11, maka lakukan install nodejs versi terbaru dengan cara ./installNode"
