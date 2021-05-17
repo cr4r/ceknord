@@ -57,7 +57,7 @@ fs.readFile('akun', 'utf8', async(err, data) => {
                         console.log('BERHASIL', hsl.result)
                     } else if (hsl && hsl.status === "no") {
                         if (hsl.result === "Login gagal") {
-                            console.log(hsl.result, hsl.saran)
+                            console.log(`result: ${hsl.result}`, `Saran:${hsl.saran}`)
                         } else {
                             console.log(hsl.result)
                         }
