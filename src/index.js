@@ -51,23 +51,22 @@ fs.readFile('../akun', 'utf8', async(err, data) => {
             if (aa && aa.status === "ok") {
                 hasill = `${aa.result.email}:${aa.result.password}\n`
                 result = aa.result;
-                await nord(result.email, result.password).then(async(hsl) => {
-                    if (hsl && hsl.status === "ok" && hsl.result !== "inactive") {
-                        await fs.writeFileSync('../hasil', hsl.result + '\n', { flag: "a+" })
-                        console.log('BERHASIL', hsl.result)
-                    } else if (hsl && hsl.status === "no") {
-                        if (hsl.result === "limit") {
-                            return console.log(`Saran:${hsl.saran}`);
-                        } else {
-                            console.log(hsl.result)
-                        }
+                hsl = await nord(result.email, result.password);
+                if (hsl && hsl.status === "ok" && hsl.result !== "inactive") {
+                    await fs.writeFileSync('../hasil', hsl.result + '\n', { flag: "a+" })
+                    console.log('BERHASIL', hsl.result)
+                } else if (hsl && hsl.status === "no") {
+                    if (hsl.result === "limit") {
+                        return console.log(`${hsl.saran}`);
                     } else {
-                        console.log(hsl);
-                    };
-                });
+                        console.log(hsl.result)
+                    }
+                } else {
+                    console.log(hsl);
+                };
             } else {
                 console.error('Error', aa)
             };
-        }
+        };
     };
 });
