@@ -70,11 +70,16 @@ msg -bar
     msg -bar
 }
 
-if [[ -e $(whereis node | head -1 | awk '{print $2}') ]]; then
-    msg -ama "Menginstall nodejs dan npm!"
-    cd /opt && chmod -R 755 ./ && wget https://nodejs.org/download/release/v14.14.0/node-v14.14.0-linux-x64.tar.gz &>/dev/null && sudo tar -xvf node-* &>/dev/null
-    cd $lokRoot
-    msg -ama "Selesai"
-    msg -bar
-fi
-node index.js
+[[ $(dpkg --get-selections | grep -w "nodejs" | head -1) ]] || {
+    if [[ -f $(whereis node | head -1 | awk '{print $2}') ]]; then
+        echo "Selesai"
+    else
+        msg -ama "Menginstall nodejs dan npm!"
+        cd /opt && chmod -R 755 ./ && wget https://nodejs.org/download/release/v14.14.0/node-v14.14.0-linux-x64.tar.gz &>/dev/null && sudo tar -xvf node-* &>/dev/null
+        cd $lokRoot
+        msg -ama "Selesai"
+        msg -bar
+    fi
+}
+cd src && node index.js
+cd ..

@@ -40,7 +40,7 @@ const filterString = (str) => {
 const nord = require('./ceknord.js')
 const fs = require('fs');
 
-fs.readFile('akun', 'utf8', async(err, data) => {
+fs.readFile('../akun', 'utf8', async(err, data) => {
     if (err) {
         return console.log(err);
     };
@@ -53,11 +53,11 @@ fs.readFile('akun', 'utf8', async(err, data) => {
                 result = aa.result;
                 await nord(result.email, result.password).then(async(hsl) => {
                     if (hsl && hsl.status === "ok" && hsl.result !== "inactive") {
-                        await fs.writeFileSync('hasil', hsl.result + '\n', { flag: "a+" })
+                        await fs.writeFileSync('../hasil', hsl.result + '\n', { flag: "a+" })
                         console.log('BERHASIL', hsl.result)
                     } else if (hsl && hsl.status === "no") {
-                        if (hsl.result === "Login gagal") {
-                            console.log(`result: ${hsl.result}`, `Saran:${hsl.saran}`)
+                        if (hsl.result === "limit") {
+                            return console.log(`Saran:${hsl.saran}`);
                         } else {
                             console.log(hsl.result)
                         }
