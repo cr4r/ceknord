@@ -21,7 +21,7 @@ module.exports = doing = (userr, passs) => new Promise((resolve, reject) => {
                     };
                 });
             } else {
-                resolve({ status: 'no', result: 'Login gagal', saran: 'Periksa kembali email/password' })
+                resolve({ status: 'no', result: 'Login gagal', saran: `Periksa kembali email/password\n${a}` })
             }
         })
     })

@@ -5,7 +5,7 @@ Megecek akun nordvpn apakah masih aktif atau tidak dengan metode aplikasi dari n
 Recomended (ubuntu)
 
 ## Edit 
-Edit lah file akun jika ingin mengecek akun versi sendiri<br>Dengan Format:<br>[username]:[password]<br>Contoh:
+Edit lah file akun jika ingin mengecek akun versi sendiri<br>Dengan Format:[username]:[password]<br>Contoh:
 <ol>
 <li>abc:123</li>
 <li>sembarang text username:password</li>

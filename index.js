@@ -56,7 +56,11 @@ fs.readFile('akun', 'utf8', async(err, data) => {
                         await fs.writeFileSync('hasil', hsl.result + '\n', { flag: "a+" })
                         console.log('BERHASIL', hsl.result)
                     } else if (hsl && hsl.status === "no") {
-                        console.log(hsl.result)
+                        if (hsl.result === "Login gagal") {
+                            console.log(hsl.result, hsl.saran)
+                        } else {
+                            console.log(hsl.result)
+                        }
                     } else {
                         console.log(hsl);
                     };
