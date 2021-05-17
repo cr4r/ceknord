@@ -1,17 +1,21 @@
 # Deskripsi
-Megecek akun nordvpn apakah masih aktif atau tidak
+Megecek akun nordvpn apakah masih aktif atau tidak dengan metode aplikasi dari nordvpn
 
 ## OS
-Recomended (ubuntu/debian)
+Recomended (ubuntu)
 
-## Instalasi
-```bash
-./install
-```
+## Edit 
+Edit lah file akun jika ingin mengecek akun versi sendiri<br>Dengan Format:<br><username>:<password><br>Contoh:
+<ol>
+<li>abc:123</li>
+<li>sembarang text username:password</li>
+<li>Sembarang text username:password text sembarang</li>
+</ol>
+
 ## Run
 ```bash
-node index.js
+./run
 ```
 
 ## Hasil
-{ status: 'ok', result: 'lipspence@gmail.com:Landbj40 May 21st, 2021' }
+Akun yang aktif akan diletakkan di file bernama hasil<br>jadi pastikan menghapus file hasil jika tidak ingin di gabungkan dengan hasil yang lain
