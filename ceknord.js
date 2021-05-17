@@ -6,8 +6,8 @@ module.exports = doing = (userr, passs) => new Promise((resolve, reject) => {
             if (stderr) resolve({ status: 'no', result: 'Error - stderr', saran: error });
             if (error) resolve({ status: 'no', result: 'Error - Email/Password Salah!', saran: 'Periksa apakah system support dengan sudo atau tidak\ncek juga apakah sudah menginstall nordvpn dengan benar!' });
             aa = stdout.split('\r');
-            a = aa[aa.length - 1].replace(/\n/g, '');
-            if (a.indexOf('Welcome') > -1) {
+            anu = aa[aa.length - 1].replace(/\n/g, '');
+            if (anu.indexOf('Welcome') > -1) {
                 exec(`sudo nordvpn account`, (error, stdout) => {
                     if (error) resolve({ 'status': 'no', 'result': 'error saat melihat informasi', saran: error })
                     aa = stdout.trim().split(' ')
@@ -21,7 +21,7 @@ module.exports = doing = (userr, passs) => new Promise((resolve, reject) => {
                     };
                 });
             } else {
-                resolve({ status: 'no', result: 'Login gagal', saran: `Periksa kembali email/password\n${a}` })
+                resolve({ status: 'no', result: 'Login gagal', saran: `Periksa kembali email/password\n${anu}` })
             }
         })
     })
