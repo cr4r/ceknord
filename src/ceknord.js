@@ -21,7 +21,7 @@ module.exports = doing = (userr, passs) => new Promise((resolve, reject) => {
                     };
                 });
             } else if (!anu) {
-                resolve({ status: 'no', result: 'limit', saran: `Anda Terkena limit, Cobalah mengganti ip komputer anda` });
+                resolve({ status: 'no', result: 'limit', saran: `Anda Terkena limit, Cobalah mengganti ip komputer anda/Menunggu beberap menit/jam` });
             } else {
                 resolve({ status: 'no', result: 'Login gagal', saran: `Periksa kembali email/password` });
             }
