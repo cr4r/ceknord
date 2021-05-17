@@ -60,8 +60,8 @@ fs.readFile('../akun', 'utf8', async(err, data) => {
                     if (hsl.result === "limit") {
                         return console.log(`${hsl.saran}`);
                     } else {
-                        console.log(hsl.result)
-                    }
+                        console.log(`result:${hsl.result}`, `saran:${hsl.saran}`)
+                    };
                 } else {
                     console.log(hsl);
                 };
